@@ -1,0 +1,94 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 8 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\repo_vagner\benchmark\foreach_vs_parallel\bin\Release\net6.0\cc770229-ef54-48a0-b241-9cf387ff9311
+// command took 1.24s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\repo_vagner\benchmark\foreach_vs_parallel\bin\Release\net6.0\cc770229-ef54-48a0-b241-9cf387ff9311
+// command took 11.93s and exited with 1
+// start dotnet build -c Release  --no-restore --no-dependencies /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\repo_vagner\benchmark\foreach_vs_parallel\bin\Release\net6.0\cc770229-ef54-48a0-b241-9cf387ff9311
+// command took 1.78s and exited with 0
+// ***** Done, took 00:00:15 (15.13 sec)   *****
+// Found 8 benchmarks:
+//   ListIterationPerformance.ForeachPerformance: DefaultJob [count=100]
+//   ListIterationPerformance.ParallelPerformance: DefaultJob [count=100]
+//   ListIterationPerformance.ForeachPerformance: DefaultJob [count=1000]
+//   ListIterationPerformance.ParallelPerformance: DefaultJob [count=1000]
+//   ListIterationPerformance.ForeachPerformance: DefaultJob [count=5000]
+//   ListIterationPerformance.ParallelPerformance: DefaultJob [count=5000]
+//   ListIterationPerformance.ForeachPerformance: DefaultJob [count=10000]
+//   ListIterationPerformance.ParallelPerformance: DefaultJob [count=10000]
+
+// **************************
+// Benchmark: ListIterationPerformance.ForeachPerformance: DefaultJob [count=100]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "cc770229-ef54-48a0-b241-9cf387ff9311.dll" --benchmarkName "foreach_vs_parallel.ListIterationPerformance.ForeachPerformance(count: 100)" --job "Default" --benchmarkId 0 in C:\repo_vagner\benchmark\foreach_vs_parallel\bin\Release\net6.0\cc770229-ef54-48a0-b241-9cf387ff9311\bin\Release\net6.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 160600.00 ns, 160.6000 us/op
+WorkloadJitting  1: 1 op, 251400.00 ns, 251.4000 us/op
+
+OverheadJitting  2: 16 op, 149300.00 ns, 9.3313 us/op
+WorkloadJitting  2: 16 op, 253600.00 ns, 15.8500 us/op
+
+WorkloadPilot    1: 16 op, 59700.00 ns, 3.7313 us/op
+WorkloadPilot    2: 32 op, 97600.00 ns, 3.0500 us/op
+WorkloadPilot    3: 64 op, 415500.00 ns, 6.4922 us/op
+WorkloadPilot    4: 128 op, 618700.00 ns, 4.8336 us/op
+WorkloadPilot    5: 256 op, 854000.00 ns, 3.3359 us/op
+WorkloadPilot    6: 512 op, 1699800.00 ns, 3.3199 us/op
+WorkloadPilot    7: 1024 op, 3351800.00 ns, 3.2732 us/op
+WorkloadPilot    8: 2048 op, 7348300.00 ns, 3.5880 us/op
+WorkloadPilot    9: 4096 op, 13539200.00 ns, 3.3055 us/op
+WorkloadPilot   10: 8192 op, 26920100.00 ns, 3.2861 us/op
+WorkloadPilot   11: 16384 op, 51083500.00 ns, 3.1179 us/op
+WorkloadPilot   12: 32768 op, 101368500.00 ns, 3.0935 us/op
+WorkloadPilot   13: 65536 op, 185485900.00 ns, 2.8303 us/op
+WorkloadPilot   14: 131072 op, 359906700.00 ns, 2.7459 us/op
+WorkloadPilot   15: 262144 op, 710125400.00 ns, 2.7089 us/op
+
+OverheadWarmup   1: 262144 op, 434000.00 ns, 1.6556 ns/op
+OverheadWarmup   2: 262144 op, 558900.00 ns, 2.1320 ns/op
+OverheadWarmup   3: 262144 op, 431900.00 ns, 1.6476 ns/op
+OverheadWarmup   4: 262144 op, 432200.00 ns, 1.6487 ns/op
+OverheadWarmup   5: 262144 op, 438600.00 ns, 1.6731 ns/op
+OverheadWarmup   6: 262144 op, 433200.00 ns, 1.6525 ns/op
+
+OverheadActual   1: 262144 op, 397800.00 ns, 1.5175 ns/op
+OverheadActual   2: 262144 op, 525000.00 ns, 2.0027 ns/op
+OverheadActual   3: 262144 op, 405100.00 ns, 1.5453 ns/op
+OverheadActual   4: 262144 op, 414900.00 ns, 1.5827 ns/op
+OverheadActual   5: 262144 op, 404800.00 ns, 1.5442 ns/op
+OverheadActual   6: 262144 op, 400300.00 ns, 1.5270 ns/op
+OverheadActual   7: 262144 op, 410600.00 ns, 1.5663 ns/op
+OverheadActual   8: 262144 op, 409600.00 ns, 1.5625 ns/op
+OverheadActual   9: 262144 op, 636600.00 ns, 2.4284 ns/op
+OverheadActual  10: 262144 op, 464700.00 ns, 1.7727 ns/op
+OverheadActual  11: 262144 op, 445700.00 ns, 1.7002 ns/op
+OverheadActual  12: 262144 op, 479400.00 ns, 1.8288 ns/op
+OverheadActual  13: 262144 op, 432800.00 ns, 1.6510 ns/op
+OverheadActual  14: 262144 op, 418600.00 ns, 1.5968 ns/op
+OverheadActual  15: 262144 op, 426300.00 ns, 1.6262 ns/op
+OverheadActual  16: 262144 op, 416700.00 ns, 1.5896 ns/op
+OverheadActual  17: 262144 op, 426000.00 ns, 1.6251 ns/op
+OverheadActual  18: 262144 op, 406300.00 ns, 1.5499 ns/op
+OverheadActual  19: 262144 op, 422900.00 ns, 1.6132 ns/op
+OverheadActual  20: 262144 op, 451800.00 ns, 1.7235 ns/op
+
+WorkloadWarmup   1: 262144 op, 709881500.00 ns, 2.7080 us/op
+WorkloadWarmup   2: 262144 op, 705091300.00 ns, 2.6897 us/op
+WorkloadWarmup   3: 262144 op, 710222700.00 ns, 2.7093 us/op
+WorkloadWarmup   4: 262144 op, 712042000.00 ns, 2.7162 us/op
+WorkloadWarmup   5: 262144 op, 710621700.00 ns, 2.7108 us/op
+WorkloadWarmup   6: 262144 op, 710092900.00 ns, 2.7088 us/op
+WorkloadWarmup   7: 262144 op, 706590500.00 ns, 2.6954 us/op
+WorkloadWarmup   8: 262144 op, 704886600.00 ns, 2.6889 us/op
+WorkloadWarmup   9: 262144 op, 711030300.00 ns, 2.7124 us/op
+WorkloadWarmup  10: 262144 op, 711835900.00 ns, 2.7154 us/op
+WorkloadWarmup  11: 262144 op, 715235100.00 ns, 2.7284 us/op
